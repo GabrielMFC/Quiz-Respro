@@ -1,0 +1,11 @@
+ - Criar um sistema de rotas com ContexAPI
+ 
+ - Criar componente para que o jogador possa inserir um apelido
+
+ - Criar componente reutilizável para exibir os níveis das eras
+ 
+ - Criar componente reutilizável para exibir o Quiz com as duas perguntas
+
+ - Criar ServerLess functions do Vercel para manipular a pontuação do jogador no SupaBase
+ 
+ - Criar componente para exibir a pontuação final, juntamente com um botão para     reiniciar o quiz(irá definir a pontuação do jogador para 0 e irá definir o ContextAPI das rotas para um valor que corresponda a era inicial)
