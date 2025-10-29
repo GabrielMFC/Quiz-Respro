@@ -1,0 +1,11 @@
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cyan;
+    border: none;
+    border-radius: 100vh;
+    padding: 3%;
+    font-size: 4vh;
+    cursor: pointer;
+}
