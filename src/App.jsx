@@ -3,6 +3,7 @@ import './styles/App.css'
 import Home from './components/Home'
 import Era from "./components/Era"
 import { PageProvider, usePage } from './globalContexts/PageProvider'
+import { UserProvider } from './globalContexts/UserContext'
 
 function PageRenderer({ propsManager, setPropsManager }) {
     const { page } = usePage()
@@ -23,9 +24,11 @@ export default function App() {
   const [propsManager, setPropsManager] = useState("")
   return (
     <PageProvider>
-      <div className="AppContainer">
-        <PageRenderer setPropsManager={setPropsManager} propsManager={propsManager}/>
-      </div>
+      <UserProvider>
+        <div className="AppContainer">
+          <PageRenderer setPropsManager={setPropsManager} propsManager={propsManager}/>
+        </div>
+      </UserProvider>
     </PageProvider>
   )
 }
