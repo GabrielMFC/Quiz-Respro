@@ -3,7 +3,7 @@ import axios from "axios";
 export default function PopUp({type, title}) {
     async function addUserInfo() {
         try {
-            const response = await axios.post('/api/add-user', {
+            const response = await axios.post('/api/addUser', {
             Name: 'Gabriel',
             Points: 0
             })
