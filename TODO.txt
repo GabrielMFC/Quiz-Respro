@@ -1,6 +1,4 @@
- - Criar um sistema de rotas com ContexAPI
- 
- - Criar componente para que o jogador possa inserir um apelido
+  - Criar componente para que o jogador possa inserir um apelido
 
  - Criar componente reutilizável para exibir os níveis das eras
  

@@ -1,6 +1,6 @@
 import "../styles/button.css"
-export default function Button({title}){
+export default function Button({title, onClick}) {
     return(
-        <button>{title}</button>
+        <button onClick={onClick}>{title}</button>
     )
 }
