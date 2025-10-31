@@ -1,17 +1,29 @@
 import PopUp from "../PopUp"
 import TopBar from "../TopBar"
-import EraLevels from "./EraLevels"
+import StartButton from "./StartButton"
+import Quiz from "../quiz/Quiz"
+import { useState } from "react"
 import { useUser } from "../../globalContexts/UserContext"
 import "../../styles/era.css"
 
 export default function Era(){
-    const {currentEra} = useUser()
+    const {userName,currentEra} = useUser()
+    const [isQuizActive, setIsQuizActive] = useState(false)
+    console.log(userName);
+    
     return(
+        !isQuizActive ? 
         <div>
             <TopBar/>
-            {/* <PopUp type={"inputName"} title={"Name"}/> */}
+           {!userName ? <PopUp type={"inputName"} title={"Name"}/> : null}
             <div style={{backgroundImage: `url(${currentEra.wallpaper})`}} className="eraBackground"></div>
-            <EraLevels/>
+            <StartButton setIsQuizActive={setIsQuizActive}/>
+        </div>
+        :
+        <div>
+            <TopBar/>
+            <div style={{backgroundImage: `url(${currentEra.wallpaper})`}} className="eraBackground"></div>
+            <Quiz setIsQuizActive={setIsQuizActive}/>
         </div>
     )
 }

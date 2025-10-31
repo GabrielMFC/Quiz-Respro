@@ -1,21 +1,13 @@
 import Button from "./Button";
-import axios from "axios";
+import { useUser } from "../globalContexts/UserContext";
 import "../styles/popUp.css"
 import { useState } from "react";
 
 export default function PopUp({type, title}) {
     const [active, setActive] = useState(true);
     const [inputValue, setInputValue] = useState("")
-    async function addUserInfo() {
-        try {
-            await axios.post('/api/addUser', {
-            Name: inputValue,
-            Points: 0
-            })
-        } catch (error) {
-            console.error('Erro ao criar usuário:', error.response?.data || error.message)
-        }
-    }
+    const {setUserName} = useUser()
+
     return(
             type === "inputName" && active ? 
             <div className="popUpBackground">
@@ -23,7 +15,7 @@ export default function PopUp({type, title}) {
                     <h2>{title}</h2>
                     <input type="text" placeholder={title + "..."} value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
                     <Button title="Confirmar" onClick={() => {
-                        addUserInfo()
+                        setUserName(inputValue)
                         setActive(false)
                     }}/>
                 </div>

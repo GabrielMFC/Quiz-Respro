@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './styles/App.css'
 import Home from './components/Home'
 import Era from "./components/eraPage/Era"
+import Quiz from './components/quiz/Quiz'
+import ResultScreen from './components/ResultScreen'
 import { PageProvider, usePage } from './globalContexts/PageProvider'
 import { UserProvider } from './globalContexts/UserContext'
 
@@ -10,7 +12,9 @@ function PageRenderer({ propsManager, setPropsManager }) {
 
     const pages = {
       Home,
-      Era
+      Era,
+      Quiz,
+      ResultScreen
     }
 
     const PageComponent = pages[page] || Home
