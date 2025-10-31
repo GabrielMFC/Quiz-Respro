@@ -1,21 +1,37 @@
 import Button from "./Button";
 import { useUser } from "../globalContexts/UserContext";
-import "../styles/popUp.css"
+import Swal from "sweetalert2";
 import { useState } from "react";
+import "../styles/popUp.css"
 
 export default function PopUp({type, title}) {
     const [active, setActive] = useState(true);
     const [inputValue, setInputValue] = useState("")
     const {setUserName} = useUser()
 
+    function verifyName(){
+        if(inputValue === ""){
+            Swal.fire({
+                title: 'Apelido inválido!',
+                text: 'O campo de apelido precisa ser preenchido!',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            })
+            return false
+        }
+    }
+
     return(
             type === "inputName" && active ? 
             <div className="popUpBackground">
                 <div className="popUpContainer">
                     <h2>{title}</h2>
-                    <input type="text" placeholder={title + "..."} value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
+                    <input type="text" placeholder={"Apelido..."} value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
                     <Button title="Confirmar" onClick={() => {
                         setUserName(inputValue)
+                        if (!verifyName()) {
+                            return
+                        }
                         setActive(false)
                     }}/>
                 </div>

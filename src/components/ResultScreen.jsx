@@ -3,6 +3,7 @@ import { usePage } from "../globalContexts/PageProvider"
 import Eras from "../dataStructuries/EraObj"
 import { useEffect } from "react"
 import axios from "axios"
+import "../styles/resultScreen.css"
 
 export default function ResultScreen() {
     const { userName, points, setPoints, setCurrentEra } = useUser()
@@ -30,8 +31,8 @@ export default function ResultScreen() {
     }
 
     return (
-        <div>
-            <h1>{userName + " o seu total de pontos foi: " + points}</h1>
+        <div className="resultContainer">
+            <h1>{userName}, o seu total de pontos foi: <span className="pointsSpan">{points}</span></h1>
             <button onClick={resetQuiz}>Recomeçar Quiz</button>
         </div>
     )

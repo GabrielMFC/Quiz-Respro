@@ -51,7 +51,7 @@ export default function Question({setIsQuizActive}) {
 
     return (
         <div className="questionContainer" style={{ backgroundColor: currentEra.color }}>
-            <h1 style={{ color: currentEra.textColor }}>{currentQuestion.question}</h1>
+            <h1 className="questionTitle" style={{ color: currentEra.textColor }}>{currentQuestion.question}</h1>
 
             <div className="optionsContainer">
                 {currentQuestion.options.map((option, i) => (

@@ -15,7 +15,7 @@ export default function Era(){
         !isQuizActive ? 
         <div>
             <TopBar/>
-           {!userName ? <PopUp type={"inputName"} title={"Name"}/> : null}
+           {!userName ? <PopUp type={"inputName"} title={"Digite seu apelido"}/> : null}
             <div style={{backgroundImage: `url(${currentEra.wallpaper})`}} className="eraBackground"></div>
             <StartButton setIsQuizActive={setIsQuizActive}/>
         </div>
