@@ -24,17 +24,23 @@ const PreHistoricQuestions = [
 ]
 
 const AncientQuestions = [
+    // {
+    //     question: "Quem inventou a matemática?",
+    //     options: ["Pitágoras", "Platão", "Ninguem", "Foi uma invenção coletiva"],
+    //     answer: "Foi uma invenção coletiva",
+    //     difficulty: easy
+    // },
+
+    // {
+    //     question: "Quem foi dito acreditar que a matemática funcionava como ferramenta para afiar o raciocínio?",
+    //     options: ["Platão", "Aristóteles", "Diôgenes", "Sócrates"],
+    //     answer: "Platão",
+    //     difficulty: medium
+    // },
     {
-        question: "Quem inventou a matemática?",
-        options: ["Pitágoras", "Platão", "Ninguem", "Foi uma invenção coletiva"],
-        answer: "Foi uma invenção coletiva",
-        difficulty: easy
-    },
-    {
-        question: "Quem foi dito acreditar que a matemática funcionava como ferramenta para afiar o raciocínio?",
-        options: ["Platão", "Aristóteles", "Diôgenes", "Sócrates"],
-        answer: "Platão",
-        difficulty: medium
+        question: "Segundo um filósofo citado na apresentação, qual era o papel da matemática na formação do filósofo?",
+        options: ["Preparar a mente.", "Ensinar apenas técnicas de contagem.", "Substituir o estudo da filosofia.", "Servir como passatempo."],
+        difficulty: hard
     }
 ]
 

@@ -30,7 +30,7 @@ export default function Question({setIsQuizActive}) {
             const nextCount = answeredCount + 1
             setAnsweredCount(nextCount)
 
-            if (nextCount >= 2) {
+            if (nextCount >= 3) {
                 if(currentEra == Eras.PreHistoric){
                     setCurrentEra(Eras.Ancient)
                 } else if(currentEra == Eras.Ancient){
